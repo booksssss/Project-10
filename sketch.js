@@ -1,5 +1,5 @@
-var ship;
 var sea;
+var ship;
 var createEdgeSprites;
 
 function preload(){
@@ -9,30 +9,59 @@ function preload(){
 
 }
 
-function setup(){
-  createCanvas(2400,2400);
-   
-    sea = createSprite(200,180,5,5);
-    sea.addImage ("sea",seaImg);
-
-   ship = createSprite (1200,1200,20,50);
-   ship.addAnimation("moving", ship_moving);
-   ship.x = 400
-   ship.scale =0.9
-
-
-   createEdgeSprites();
-}
-
-function draw() {
-  background("blue");
-
-  sea.velocityX =-2
-  //console.log(sea.x);
+ function setup(){
+   createCanvas(400,400);
   
-  if (sea.x <0) {
-    sea.x = sea.width/2; 
-  }
-  ship.collide(sea);
- drawSprites();
-}
+   
+     //sea = createSprite(200,180,5,5);
+     sea = createSprite(110,110,400,400);
+     sea.addImage ("sea",seaImg);
+    //  sea.x=sea.width/2;
+    // sea.velocityX=-4
+    ship = createSprite (130,200,2,2);
+    ship.addAnimation("moving", ship_moving);
+    //ship.x = 400
+    ship.scale =0.25
+
+
+   //  createEdgeSprites();
+ }
+
+ function draw() {
+   background("blue");
+
+   sea.velocityX =-2
+   console.log(sea.x);
+  
+   if (sea.x <0) {
+     sea.x = sea.width/2; 
+   }
+   //ship.collide(sea);
+  drawSprites();
+ }
+// Other Neha's code:
+ // function setup(){
+//   createCanvas(400,400);
+  
+//   seaBackground=createSprite(110,110,400,400);
+//   seaBackground.addImage("sea", seaImg);
+//   seaBackground.x=seaBackground .width/2
+//   seaBackground.velocityX=-4
+  
+//   ship=createSprite(130,200,2,2);
+//   ship.addAnimation('shipMoving', ship_moving);
+//   ship.scale=0.25
+// }
+
+// function draw() {
+//   background("blue");
+  
+//   if(seaBackground.x<0){
+//     seaBackground.x=seaBackground.width/2
+//   }
+  
+
+  
+//   drawSprites()
+ 
+// }
